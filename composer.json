@@ -3,6 +3,13 @@
     "description": "Allows users to quickly register and login via facebook",
     "type": "silverstripe-module",
 		"keywords": ["silverstripe", "member", "login", "registration", "facebook"],
+		"license": "BSD-3-Clause",
+		"authors": [
+			{
+				"name": "Robert Clarkson",
+				"email": "robertclarkson@gmail.com"
+			}
+		],
 		"require": {
 			"silverstripe/framework": "3.*",
 			"silverstripe/cms": "3.*"
