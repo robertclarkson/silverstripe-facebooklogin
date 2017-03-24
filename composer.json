@@ -16,9 +16,9 @@
 			"facebook/graph-sdk": "^5.4"
 		},
 		"extra": {
-		"branch-alias": {
-			"dev-master": "1.1.x-dev"
-		},
-		"installer-name": "facebook-login"
-	}
+			"branch-alias": {
+				"dev-master": "1.1.x-dev"
+			},
+			"installer-name": "facebook-login"
+		}
 }
