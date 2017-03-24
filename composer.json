@@ -1,0 +1,16 @@
+{
+    "name": "robertclarkson/silverstripe-facebooklogin",
+    "description": "Allows users to quickly register and login via facebook",
+    "type": "silverstripe-module",
+		"keywords": ["silverstripe", "member", "login", "registration", "facebook"],
+		"require": {
+			"silverstripe/framework": "3.*",
+			"silverstripe/cms": "3.*"
+		},
+		"extra": {
+		"branch-alias": {
+			"dev-master": "1.0.x-dev"
+		},
+		"installer-name": "facebook-login"
+	}
+}
