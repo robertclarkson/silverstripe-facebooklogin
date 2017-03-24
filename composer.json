@@ -12,7 +12,8 @@
 		],
 		"require": {
 			"silverstripe/framework": "3.*",
-			"silverstripe/cms": "3.*"
+			"silverstripe/cms": "3.*",
+			"facebook/graph-sdk": "^5.4"
 		},
 		"extra": {
 		"branch-alias": {
