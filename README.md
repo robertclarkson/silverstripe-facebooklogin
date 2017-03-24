@@ -1,4 +1,4 @@
-=Facebook Connector=
+#Facebook Connector#
 
 Adds a facebook login to the silverstripe site.
 
