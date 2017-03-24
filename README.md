@@ -12,3 +12,7 @@ FacebookControllerExtension:
   create_member: true
 ```
 
+To add a facebook login link, add this to your template:
+```
+<a href="$FacebookLoginLink">Facebook Login</a>
+```
