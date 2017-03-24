@@ -1,0 +1,6 @@
+
+
+
+Director:
+  rules:
+    '/FacebookCallback//$Action/$ID/$Name': 'Page_Controller'

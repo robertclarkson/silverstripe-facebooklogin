@@ -1,0 +1,7 @@
+Member:
+  extensions:
+    - FacebookMemberExtension
+
+Page_Controller:
+  extensions:
+    - FacebookControllerExtension
