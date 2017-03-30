@@ -64,7 +64,7 @@ class FacebookControllerExtension extends Extension {
 		try {
 			$accessToken = $helper->getAccessToken();
 		} catch(Facebook\Exceptions\FacebookResponseException $e) {
-			SS_Log::log('Graph returned an error: ' . $e->getMessage(), SS_Log::ERROR);
+			SS_Log::log('Graph returned an error: ' . $e->getMessage(), SS_Log::ERR);
 			user_error('Graph returned an error: ' . $e->getMessage());
 			exit;
 		} catch(Facebook\Exceptions\FacebookSDKException $e) {
@@ -75,13 +75,17 @@ class FacebookControllerExtension extends Extension {
 
 		if (! isset($accessToken)) {
 			if ($helper->getError()) {
-				SS_Log::log('Error: ' . $helper->getErrorCode() . $helper->getErrorReason(). $helper->getErrorDescription(), SS_Log::ERROR);
+				// SS_Log::log('Error: ' . $helper->getErrorCode() . $helper->getErrorReason(). $helper->getErrorDescription(), SS_Log::ERR);
 			
-				header('HTTP/1.0 401 Unauthorized');
-				echo "Error: " . $helper->getError() . "\n";
-				echo "Error Code: " . $helper->getErrorCode() . "\n";
-				echo "Error Reason: " . $helper->getErrorReason() . "\n";
-				echo "Error Description: " . $helper->getErrorDescription() . "\n";
+				// header('HTTP/1.0 401 Unauthorized');
+				// echo "Error: " . $helper->getError() . "\n";
+				// echo "Error Code: " . $helper->getErrorCode() . "\n";
+				// echo "Error Reason: " . $helper->getErrorReason() . "\n";
+				// echo "Error Description: " . $helper->getErrorDescription() . "\n";
+				return $this->owner->customise(array(
+					'Title' => 'Facebook Login Error',
+					'Content' => 'Facebook Login error: '.$helper->getErrorCode().' '.$helper->getErrorReason().' '.$helper->getErrorDescription())
+				)->renderWith('Page');
 			} else {
 				header('HTTP/1.0 400 Bad Request');
 				echo 'Bad request';
@@ -138,7 +142,7 @@ class FacebookControllerExtension extends Extension {
         $member->syncFacebookDetails($userNode);
         $member->logIn();
 		Session::set('fb_access_token', (string) $accessToken);
-        return $this->owner->redirectBack();
+        return $this->owner->redirect(Director::absoluteBaseURL());
 
    	}
 
