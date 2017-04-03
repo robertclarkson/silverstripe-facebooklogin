@@ -33,7 +33,7 @@ class FacebookControllerExtension extends Extension {
 		$permissions = ['email', 'public_profile']; // Optional permissions
 		$loginUrl = $helper->getLoginUrl(
 			Controller::join_links(
-				$this->owner->AbsoluteLink('FacebookCallback')), 
+				Director::absoluteBaseURL(),'FacebookCallback'), 
 			$permissions);
 		
 		return htmlspecialchars($loginUrl);
