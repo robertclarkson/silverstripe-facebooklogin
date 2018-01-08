@@ -146,4 +146,20 @@ class FacebookControllerExtension extends Extension {
 
    	}
 
+   	/**
+     * @return FacebookSession
+     */
+    public function getFacebookSession()
+    {
+        if (!$this->session) {
+            $accessToken = Session::get(
+                FacebookControllerExtension::FACEBOOK_ACCESS_TOKEN
+            );
+            if ($accessToken) {
+                $this->session = new FacebookSession($accessToken);
+            }
+        }
+        return $this->session;
+    }
+
 }
